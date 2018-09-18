@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.mount('ember-blog');
+  this.mount('my-new-engine', { path: '/' });
 });
 
 export default Router;

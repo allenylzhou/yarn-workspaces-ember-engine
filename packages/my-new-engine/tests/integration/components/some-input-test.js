@@ -5,22 +5,19 @@ import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | some-input', function(hooks) {
   setupRenderingTest(hooks);
+  hooks.beforeEach(function() {
+    const router = this.owner.lookup('router:main');
+    router.setupRouter();
+  });
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`{{some-input}}`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
     // Template block usage:
     await render(hbs`
-      {{#some-input}}
+      {{#link-to "dashboard" class="my-link"}}
         template block text
-      {{/some-input}}
+      {{/link-to}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom('.my-link').hasAttribute('href', '');
   });
 });

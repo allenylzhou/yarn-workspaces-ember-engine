@@ -20,24 +20,11 @@
     "baseUrl": ".",
     "module": "es6",
     "paths": {
-      "dummy/tests/*": [
+      "my-new-app/tests/*": [
         "tests/*"
       ],
-      "dummy/*": [
-        "tests/dummy/app/*",
+      "my-new-app/*": [
         "app/*"
-      ],
-      "my-new-engine": [
-        "addon"
-      ],
-      "my-new-engine/*": [
-        "addon/*"
-      ],
-      "my-new-engine/test-support": [
-        "addon-test-support"
-      ],
-      "my-new-engine/test-support/*": [
-        "addon-test-support/*"
       ],
       "*": [
         "types/*"
@@ -50,10 +37,7 @@
   },
   "include": [
     "app/**/*",
-    "addon/**/*",
     "tests/**/*",
-    "types/**/*",
-    "test-support/**/*",
-    "addon-test-support/**/*"
+    "types/**/*"
   ]
 }
